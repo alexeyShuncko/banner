@@ -29,6 +29,13 @@ function imgTask() {
   return src('src/img/*.png').pipe(dest('docs/img'));
 }
 
+function imgSvgTask() {
+  return src('src/img/*.svg').pipe(dest('docs/img'));
+}
+
+function fontTask() {
+  return src('src/fonts/*.ttf').pipe(dest('docs/fonts'));
+}
 function scss() {
   return src('src/scss/**.scss')
     .pipe(sass())
@@ -43,7 +50,16 @@ function serve() {
   });
   watch(
     'src/**/*.*',
-    series(clear, scss, jsTask, jsonTask, imgTask, htmlTask)
+    series(
+      clear,
+      scss,
+      jsTask,
+      jsonTask,
+      imgTask,
+      imgSvgTask,
+      fontTask,
+      htmlTask
+    )
   ).on('change', browserSync.reload);
 }
 
@@ -52,5 +68,15 @@ function clear() {
 }
 gulp.task(
   'default',
-  series(clear, scss, jsTask, jsonTask, imgTask, htmlTask, serve)
+  series(
+    clear,
+    scss,
+    jsTask,
+    jsonTask,
+    imgTask,
+    imgSvgTask,
+    fontTask,
+    htmlTask,
+    serve
+  )
 );
