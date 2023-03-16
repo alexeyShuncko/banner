@@ -21,14 +21,15 @@ a {
 }
 
 .container {
-  padding-top: 2.75rem;
-  height: 100vh;
+  min-height: 100vh;
   background: url(../img/4@2x.png);
   background-size: cover;
+  overflow: auto;
 }
 
 .close {
   margin: 0 1.5rem;
+  margin-top: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,6 +66,17 @@ a {
     line-height: 2.63rem;
     color: #ffffff;
     text-shadow: 0px 0.13rem 0.25rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-height: 736px) {
+  .titleBlock {
+    margin-top: 6.8rem;
+  }
+}
+@media (max-height: 667px) {
+  .titleBlock {
+    margin-top: 2.8rem;
   }
 }
 
