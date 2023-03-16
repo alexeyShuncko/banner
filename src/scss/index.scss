@@ -21,21 +21,31 @@ a {
 }
 
 .container {
-  padding-top: 44px;
-  height: 150vh;
+  padding-top: 2.75rem;
+  height: 100vh;
   background: url(../img/4@2x.png);
   background-size: cover;
 }
 
 .close {
-  margin: 0 24px;
+  margin: 0 1.5rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  font-size: 13px;
-  & span:nth-child(1) {
+  font-size: 0.8rem;
+  & a:nth-child(1) {
     transform: rotate(45deg);
     color: rgba(255, 255, 255, 0.4);
-    font-size: 16px;
+    div {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 2rem;
+      }
+    }
   }
   #restore {
     color: rgba(255, 255, 255, 0.6);
@@ -44,17 +54,17 @@ a {
 }
 
 .titleBlock {
-  margin-top: 157px;
+  margin-top: 9.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   & #title {
     text-align: center;
     font-family: 'SFProDisplay';
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 2.25rem;
+    line-height: 2.63rem;
     color: #ffffff;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0.13rem 0.25rem rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -62,11 +72,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 29px;
+  margin-top: 1.8rem;
   div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
     div {
       display: flex;
       flex-direction: row;
@@ -75,34 +85,34 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30px;
+        width: 1.875rem;
       }
       span {
         font-family: 'SFProText';
-        font-size: 17px;
+        font-size: 1.06rem;
         color: #fff;
-        letter-spacing: -0.321111px;
-        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.684495);
+        letter-spacing: -0.321111px; // убрать!!!!!!!
+        text-shadow: 0px 0px 0.25rem rgba(0, 0, 0, 0.684495);
       }
     }
   }
 }
 
 .price {
-  margin-top: 44px;
+  margin-top: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .card1,
 .card2 {
   position: relative;
-  width: 131px;
-  height: 162px;
-  border-radius: 19px;
-  border: 1px solid #495795;
+  width: 8.2rem;
+  height: 10.1rem;
+  border-radius: 1.2rem;
+  border: 0.06rem solid #495795;
 
   cursor: pointer;
   opacity: 0.5;
@@ -112,7 +122,7 @@ a {
     color: #fff;
     text-align: center;
     font-family: 'SFProDisplay';
-    letter-spacing: 1px;
+    letter-spacing: 0.06rem;
   }
 }
 .card1.active,
@@ -124,11 +134,11 @@ a {
 
 .percentBlock {
   position: absolute;
-  top: -10px;
-  right: -5px;
-  width: 39px;
-  height: 39px;
-  border-left: 1px solid #495795;
+  top: -0.625rem;
+  right: -0.3125rem;
+  width: 2.44rem;
+  height: 2.44rem;
+  border-left: 0.06rem solid #495795;
   transform: rotate(-45deg);
   border-radius: 50%;
   z-index: 10;
@@ -137,33 +147,33 @@ a {
 #num83 {
   position: absolute;
   transform: rotate(45deg);
-  top: 2px;
-  right: 1px;
-  width: 35px;
-  height: 35px;
+  top: 0.125rem;
+  right: 0.06rem;
+  width: 2.19rem;
+  height: 2.19rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #db0000;
   font-family: 'SFProDisplay';
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
 }
 
 #monthly,
 #annually {
-  margin-top: 23px;
-  font-size: 17px;
+  margin-top: 1.44rem;
+  font-size: 1.06rem;
 }
 #perMonth,
 #perYear {
   font-family: 'SFProDisplayNorm';
-  margin-top: 18px;
-  font-size: 14px;
-  line-height: 15px;
+  margin-top: 1.125rem;
+  font-size: 0.875rem;
+  line-height: 0.94rem;
   &::first-line {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
 #DAYSFREE,
@@ -172,21 +182,21 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 100px;
-  left: -3px;
-  width: 137px;
-  height: 20px;
-  font-size: 14px;
-  line-height: 16px;
+  top: 6.25rem;
+  left: -0.19rem;
+  width: 8.56rem;
+  height: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
   background: #495795;
 }
 
 #priceMonth,
 #priceMonth2 {
   font-family: 'SFProDisplayNorm';
-  margin-top: 40px;
-  font-size: 12px;
-  line-height: 14px;
+  margin-top: 2.5rem;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
 }
 
 .btn {
@@ -196,32 +206,32 @@ a {
 }
 
 button {
-  width: 280px;
-  height: 54px;
-  margin-top: 24px;
+  width: 17.5rem;
+  height: 3.375rem;
+  margin-top: 1.5rem;
   background: linear-gradient(270deg, #1987ff 0%, #19ccff 100%);
-  border-radius: 30px;
+  border-radius: 1.875rem;
   border: none;
   outline: none;
   color: #fff;
   font-family: 'SFProDisplay';
-  font-size: 17px;
-  line-height: 17px;
+  font-size: 1.06rem;
+  line-height: 1.06rem;
 }
 
 button:active {
-  box-shadow: 0 0 10px #19ccff;
+  box-shadow: 0 0 0.625rem #19ccff;
 }
 
 #autoRenewable {
-  margin: 16px 0;
+  margin: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   opacity: 0.5;
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 0.69rem;
+  line-height: 0.81rem;
   font-family: 'Roboto';
 }
 
@@ -229,13 +239,13 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 27px;
+  margin: 0 1.69rem;
 }
 
 #terms,
 #privacy {
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 0.6875rem;
+  line-height: 0.8125rem;
   text-decoration-line: underline;
   color: #bdc0d0;
 }

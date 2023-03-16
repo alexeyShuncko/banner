@@ -89,3 +89,15 @@ btn.addEventListener('click', () => {
     window.location.href = ' https://google.com/';
   }
 });
+
+let html = document.querySelector('html');
+
+window.addEventListener('resize', (e) => {
+  if (window.innerHeight >= 2532) {
+    html.style.fontSize = '48px';
+  } else {
+    html.style.fontSize = '16px';
+  }
+});
+
+console.log(window.innerHeight);
