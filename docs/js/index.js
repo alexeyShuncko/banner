@@ -43,7 +43,7 @@ let privacy = document.getElementById('privacy');
 let num83 = document.getElementById('num83');
 let btn = document.querySelector('button');
 
-fetch(`../Localizations/${lang}.json`)
+fetch(`./Localizations/${lang}.json`)
   .then((response) => response.json())
   .then((json) => {
     restore.innerHTML = json['Restore'];
