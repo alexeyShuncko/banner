@@ -21,6 +21,8 @@ let priceMonth2 = document.getElementById('priceMonth2');
 let autoRenewable = document.getElementById('autoRenewable');
 let terms = document.getElementById('terms');
 let privacy = document.getElementById('privacy');
+let num83 = document.getElementById('num83');
+let btn = document.querySelector('button');
 
 fetch(`../Localizations/${lang}.json`)
   .then((response) => response.json())
@@ -52,6 +54,8 @@ fetch(`../Localizations/${lang}.json`)
     autoRenewable.innerHTML = json['Auto-renewable. Cancel anytime.'];
     terms.innerHTML = json['Terms of Use'];
     privacy.innerHTML = json['Privacy Policy'];
+    num83.innerHTML = json['-83%'];
+    btn.innerHTML = json['Continue'];
   });
 
 let price = document.getElementById('price');
@@ -59,12 +63,17 @@ let card1 = document.querySelector('[data-num="1"]');
 let card2 = document.querySelector('[data-num="2"]');
 
 price.addEventListener('click', (e) => {
-  if (e.target.dataset.num == 1 || e.target.parentNode.dataset.num == 1) {
+  if (
+    e.target.dataset.num == 1 ||
+    e.target.parentNode.dataset.num == 1 ||
+    e.target.parentNode.parentNode.dataset.num == 1
+  ) {
     card1.classList.add('active');
     card2.classList.remove('active');
   } else if (
     e.target.dataset.num == 2 ||
-    e.target.parentNode.dataset.num == 2
+    e.target.parentNode.dataset.num == 2 ||
+    e.target.parentNode.parentNode.dataset.num == 2
   ) {
     card2.classList.add('active');
     card1.classList.remove('active');
@@ -72,3 +81,11 @@ price.addEventListener('click', (e) => {
 });
 
 let a = ''.replace;
+
+btn.addEventListener('click', () => {
+  if (card1.classList.contains('active')) {
+    window.location.href = 'https://apple.com/';
+  } else {
+    window.location.href = ' https://google.com/';
+  }
+});
