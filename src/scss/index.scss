@@ -69,14 +69,14 @@ a {
   }
 }
 
-@media (max-height: 736px) {
+@media (max-height: 737px) {
   .titleBlock {
-    margin-top: 6.8rem;
+    margin-top: 5rem;
   }
 }
-@media (max-height: 667px) {
+@media (max-height: 668px) {
   .titleBlock {
-    margin-top: 2.8rem;
+    margin-top: 1.3rem;
   }
 }
 
@@ -109,6 +109,13 @@ a {
     }
   }
 }
+@media (min-height: 2531px) {
+  .content {
+    img {
+      transform: scale(3);
+    }
+  }
+}
 
 .price {
   margin-top: 2.75rem;
@@ -125,11 +132,9 @@ a {
   height: 10.1rem;
   border-radius: 1.2rem;
   border: 0.06rem solid #495795;
-
   cursor: pointer;
   opacity: 0.5;
-  transition: scale 0.3s, opacity 0.3s;
-
+  transition: 0.2s linear;
   div {
     color: #fff;
     text-align: center;
@@ -139,9 +144,32 @@ a {
 }
 .card1.active,
 .card2.active {
-  scale: 1.1;
+  transform: scale(1.1);
   opacity: 1;
   background: rgba(73, 87, 149, 0.197154);
+  #monthly,
+  #annually {
+    font-size: calc(1.1 * 1.0625rem);
+  }
+  #perMonth,
+  #perYear {
+    line-height: calc(var(--coef) * 1.1 * 0.94rem);
+    font-size: calc(1.1 * 0.875rem);
+    &::first-line {
+      font-size: calc(1.1 * 1.375rem);
+    }
+  }
+  #DAYSFREE,
+  #MOSTPOPULAR {
+    font-size: calc(var(--coef) * 1.1 * 0.875rem);
+    line-height: calc(var(--coef) * 1.1 * 1rem);
+  }
+  #priceMonth,
+  #priceMonth2 {
+    margin-top: 2.5rem;
+    font-size: calc(1.1 * 0.75rem);
+    line-height: calc(1.1 * 0.875rem);
+  }
 }
 
 .percentBlock {
@@ -176,14 +204,14 @@ a {
 #monthly,
 #annually {
   margin-top: 1.44rem;
-  font-size: 1.06rem;
+  font-size: 1.0625rem;
 }
 #perMonth,
 #perYear {
   font-family: 'SFProDisplayNorm';
-  margin-top: 1.125rem;
+  margin-top: calc(1.125rem / var(--coef));
   font-size: 0.875rem;
-  line-height: 0.94rem;
+  line-height: calc(var(--coef) * 0.94rem);
   &::first-line {
     font-size: 1.375rem;
   }
@@ -194,19 +222,19 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 6.25rem;
+  top: calc(var(--top) * 65%);
   left: -0.19rem;
   width: 8.56rem;
   height: 1.25rem;
-  font-size: 0.875rem;
-  line-height: 1rem;
+  font-size: calc(var(--coef) * 0.875rem);
+  line-height: calc(var(--coef) * 1rem);
   background: #495795;
 }
 
 #priceMonth,
 #priceMonth2 {
   font-family: 'SFProDisplayNorm';
-  margin-top: 2.5rem;
+  margin-top: 2.75rem;
   font-size: 0.75rem;
   line-height: 0.875rem;
 }
@@ -227,8 +255,8 @@ button {
   outline: none;
   color: #fff;
   font-family: 'SFProDisplay';
-  font-size: 1.06rem;
-  line-height: 1.06rem;
+  font-size: 1.0625rem;
+  line-height: 1.0625rem;
 }
 
 button:active {
@@ -242,9 +270,9 @@ button:active {
   justify-content: center;
   color: #fff;
   opacity: 0.5;
-  font-size: 0.69rem;
+  font-size: 0.6875rem;
   line-height: 0.81rem;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
 }
 
 .links {
@@ -252,6 +280,7 @@ button:active {
   align-items: center;
   justify-content: space-between;
   margin: 0 1.69rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 #terms,

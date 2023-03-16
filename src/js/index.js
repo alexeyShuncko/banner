@@ -1,9 +1,28 @@
+// определение высоты устройства, для масштабирования iphone14
+let html = document.querySelector('html');
+
+if (window.innerHeight >= 2532) {
+  html.style.fontSize = '48px';
+}
+
+window.addEventListener('resize', (e) => {
+  if (window.innerHeight >= 2532) {
+    html.style.fontSize = '48px';
+  } else {
+    html.style.fontSize = '16px';
+  }
+});
+
+// определение языка системы, параметра строки запроса
+
 let arrLang = ['en', 'es', 'fr', 'ja', 'nl', 'ru', 'zh'];
 let querylang =
   window.location.search.includes('?lang') && window.location.search.slice(6);
 
 let langSyst = !querylang ? navigator.language : querylang;
 let lang = arrLang.includes(langSyst) ? langSyst : 'en';
+
+// вставка текстовых строк на основе языка
 
 let restore = document.getElementById('restore');
 let title = document.getElementById('title');
@@ -58,6 +77,8 @@ fetch(`../Localizations/${lang}.json`)
     btn.innerHTML = json['Continue'];
   });
 
+// анимация нажатия на карточки
+
 let price = document.getElementById('price');
 let card1 = document.querySelector('[data-num="1"]');
 let card2 = document.querySelector('[data-num="2"]');
@@ -80,7 +101,7 @@ price.addEventListener('click', (e) => {
   }
 });
 
-let a = ''.replace;
+// переход по ссылкам при нажатии на кнопку
 
 btn.addEventListener('click', () => {
   if (card1.classList.contains('active')) {
@@ -90,14 +111,31 @@ btn.addEventListener('click', () => {
   }
 });
 
-let html = document.querySelector('html');
+//  изменение шрифта, оступов, высоты строки для размещения в соответствующих контейнерах
 
-window.addEventListener('resize', (e) => {
-  if (window.innerHeight >= 2532) {
-    html.style.fontSize = '48px';
-  } else {
-    html.style.fontSize = '16px';
-  }
-});
+if (lang === 'ru' || lang === 'fr' || lang === 'nl') {
+  DAYSFREE.style.setProperty('--coef', 0.8);
+  MOSTPOPULAR.style.setProperty('--coef', 0.8);
+  perMonth.style.setProperty('--coef', 1);
+  perYear.style.setProperty('--coef', 1);
+  DAYSFREE.style.setProperty('--top', 1);
+  MOSTPOPULAR.style.setProperty('--top', 1);
+}
 
-console.log(window.innerHeight);
+if (lang === 'en' || lang === 'es') {
+  perMonth.style.setProperty('--coef', 1);
+  perYear.style.setProperty('--coef', 1);
+  DAYSFREE.style.setProperty('--coef', 1);
+  MOSTPOPULAR.style.setProperty('--coef', 1);
+  DAYSFREE.style.setProperty('--top', 1);
+  MOSTPOPULAR.style.setProperty('--top', 1);
+}
+
+if (lang === 'zh' || lang === 'ja') {
+  perMonth.style.setProperty('--coef', 1.2);
+  perYear.style.setProperty('--coef', 1.2);
+  DAYSFREE.style.setProperty('--coef', 1);
+  MOSTPOPULAR.style.setProperty('--coef', 1);
+  DAYSFREE.style.setProperty('--top', 1.05);
+  MOSTPOPULAR.style.setProperty('--top', 1.05);
+}
